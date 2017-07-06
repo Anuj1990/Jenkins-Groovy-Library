@@ -34,6 +34,8 @@ def call(String buildStatus = 'STARTED') {
 
   emailext (
       to: 'anuj_sharma401@yahoo.com',
+      attachmentsPattern: 'target/surefire-reports/TEST-test.OtherTest.xml',
+      attachLog: true,
       subject: subject,
       body: details,
       recipientProviders: [[$class: 'DevelopersRecipientProvider']]
